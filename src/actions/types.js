@@ -1,0 +1,8 @@
+export const GET_PHOTOS = 'GET_PHOTOS';
+export const GET_MORE_PHOTOS = 'GET_MORE_PHOTOS';
+export const GET_DETAIL = 'GET_DETAIL';
+export const GET_SEARCHED_PHOTO = 'GET_SEARCHED_PHOTO';
+export const SET_LOADING = 'SET_LOADING';
+export const SET_CURRENT = 'SET_CURRENT';
+export const CLEAR_CURRENT = 'CLEAR_CURRENT';
+export const SEARCHED_MORE_PHOTO = 'SEARCHED_MORE_PHOTO';
