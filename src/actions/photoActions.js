@@ -7,7 +7,7 @@ import {
   SEARCHED_MORE_PHOTO,
 } from '../actions/types';
 
-let key = '';
+let key;
 
 if (process.env.NODE_ENV === 'production') {
   key = process.env.UNSPLASH_KEY;
