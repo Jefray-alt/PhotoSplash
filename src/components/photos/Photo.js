@@ -12,17 +12,20 @@ import { connect } from 'react-redux';
 import {
   getPhotos,
   searchPhoto,
-  searchMorePhoto
+  searchMorePhoto,
 } from '../../actions/photoActions';
 
 const Photo = ({
   photo: { photos, search, page },
   getPhotos,
-  searchMorePhoto
+  searchMorePhoto,
 }) => {
-  useEffect(() => {
-    getPhotos();
-  }, []);
+  useEffect(
+    () => {
+      getPhotos();
+    }, // eslint-disable-next-line
+    []
+  );
 
   if (search !== null && photos.length === 0) {
     return (
@@ -50,7 +53,7 @@ const Photo = ({
         loader={<Preloader />}
       >
         <div className='gallery-container'>
-          {photos.map(photo => (
+          {photos.map((photo) => (
             <PhotoItem key={uuidv4()} item={photo} />
           ))}
         </div>
@@ -63,14 +66,14 @@ Photo.propTypes = {
   getPhotos: Proptypes.func.isRequired,
   searchPhoto: Proptypes.func.isRequired,
   searchMorePhoto: Proptypes.func.isRequired,
-  photo: Proptypes.object.isRequired
+  photo: Proptypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  photo: state.photo
+const mapStateToProps = (state) => ({
+  photo: state.photo,
 });
 export default connect(mapStateToProps, {
   getPhotos,
   searchPhoto,
-  searchMorePhoto
+  searchMorePhoto,
 })(Photo);
