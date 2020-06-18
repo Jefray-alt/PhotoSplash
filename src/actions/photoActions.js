@@ -10,8 +10,7 @@ import {
 let key = '';
 
 if (process.env.NODE_ENV === 'production') {
-  key = process.env.UNSPLASH_KEY;
-  console.log(process.env);
+  key = process.env.REACT_APP_UNSPLASH_CLIENT_ACCESS_KEY;
 } else {
   key = process.env.REACT_APP_UNSPLASH_CLIENT_ACCESS_KEY;
 }
