@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { setCurrent } from '../../actions/photoActions';
 
 const PhotoItem = ({ item, setCurrent }) => {
-  const onOpen = item => {
+  const onOpen = (item) => {
     document.body.style.overflow = 'hidden';
     setCurrent(item);
   };
@@ -24,8 +24,6 @@ const PhotoItem = ({ item, setCurrent }) => {
           <span className='stat'>
             <i className='fas fa-heart'></i>
             {item.likes}
-            <i className='fas fa-eye'></i>
-            {item.views}
           </span>
         </div>
       </div>
@@ -33,18 +31,18 @@ const PhotoItem = ({ item, setCurrent }) => {
   );
 };
 
-const photoItem = url => ({
+const photoItem = (url) => ({
   height: '300px',
   width: '100%',
   backgroundImage: `url(${url})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  cursor: 'pointer'
+  cursor: 'pointer',
 });
 
 PhotoItem.propTypes = {
-  setCurrent: PropTypes.func.isRequired
+  setCurrent: PropTypes.func.isRequired,
 };
 
 export default connect(null, { setCurrent })(PhotoItem);
